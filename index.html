@@ -9,6 +9,7 @@
     <body>
         <!-- prepare a DOM with width and height for ECharts -->
         <div id="main" style="width: 650px;height:400px;"></div>
+        <div id="leaf" style="width: 650px;height:400px;"></div>
         <script type="text/javascript">
             // based on prepared dom, initialize echarts instance
             var myChart = echarts.init(document.getElementById('main'),'dark');
@@ -35,6 +36,19 @@
 
             // use configuration item and data specified to show chart
             myChart.setOption(option);
+        </script>
+
+        <script type="text/javascript">
+            echarts.init(document.getElementById('leaf')).setOption({
+                series: {
+                    type: 'pie',
+                    data: [
+                        {name: 'A', value:1212},
+                        {name: 'B', value:2323},
+                        {name: 'C', value:1919},
+                    ]
+                }
+            })
         </script>
     </body>
 </html>
