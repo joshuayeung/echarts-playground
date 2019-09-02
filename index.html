@@ -31,7 +31,54 @@
                     name: 'Sales',
                     type: 'bar',
                     data: [5, 20, 36, 10, 10, 20]
-                }]
+                }],
+                media: [
+    
+    {
+        query: {
+            maxAspectRatio: 1           // 当长宽比小于1时。
+        },
+        option: {
+            legend: {                   // legend 放在底部中间。
+                right: 'center',
+                bottom: 0,
+                orient: 'horizontal'    // legend 横向布局。
+            },
+            series: [                   // 两个饼图左右布局。
+                {
+                    radius: [20, '50%'],
+                    center: ['50%', '30%']
+                },
+                {
+                    radius: [30, '50%'],
+                    center: ['50%', '70%']
+                }
+            ]
+        }
+    },
+    {
+        query: {
+            maxWidth: 500               // 当容器宽度小于 500 时。
+        },
+        option: {
+            legend: {
+                right: 10,              // legend 放置在右侧中间。
+                top: '15%',
+                orient: 'vertical'      // 纵向布局。
+            },
+            series: [                   // 两个饼图上下布局。
+                {
+                    radius: [20, '50%'],
+                    center: ['50%', '30%']
+                },
+                {
+                    radius: [30, '50%'],
+                    center: ['50%', '75%']
+                }
+            ]
+        }
+    }
+]
             };
 
             // use configuration item and data specified to show chart
